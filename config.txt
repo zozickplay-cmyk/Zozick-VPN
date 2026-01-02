@@ -1,0 +1,9 @@
+rule-providers:
+  my-direct:
+    type: http
+    behavior: classical
+    url: "https://gist.githubusercontent.com/zozickplay-cmyk/bc2051c4a254850ce7bda8bce046561e/raw/Zozick_VPN_config.yaml"
+    path: ./games-direct.yaml
+    interval: 3600
+rules:
+  - MATCH,Main
