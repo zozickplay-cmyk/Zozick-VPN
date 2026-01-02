@@ -2,8 +2,17 @@ rule-providers:
   my-direct:
     type: http
     behavior: classical
-    url: "https://gist.githubusercontent.com/zozickplay-cmyk/bc2051c4a254850ce7bda8bce046561e/raw/Zozick_VPN_config.yaml"
+    url: https://gist.githubusercontent.com/zozickplay-cmyk/f0ad4515e577bf1dd5ade61fbbe4f804/raw/games-direct.yaml
     path: ./games-direct.yaml
     interval: 3600
+  my-proxy:
+    type: http
+    behavior: classical
+    url: https://gist.githubusercontent.com/zozickplay-cmyk/cc071c085a58a4ea638d783de5c3ab03/raw/vpn-proxy.yaml
+    path: ./vpn-proxy.yaml
+    interval: 3600
 rules:
-  - MATCH,Main
+- NETWORK,UDP,DIRECT
+- RULE-SET,my-proxy,Main
+- RULE-SET,my-direct,DIRECT
+- MATCH,Main
