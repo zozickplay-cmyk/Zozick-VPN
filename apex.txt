@@ -1,0 +1,5 @@
+prepend:
+  - 'AND,((PROCESS-NAME,r5apex_dx12.exe),(NETWORK,TCP)),Main'
+  - 'AND,((PROCESS-NAME,r5apex_dx12.exe),(NETWORK,UDP)),DIRECT'
+append: []
+delete: []
